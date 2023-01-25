@@ -15,14 +15,15 @@ import { config } from 'dotenv'
 export default defineEventHandler(async event => {
 	console.log('server is hit')
 	const query = getQuery(event)
-	// const body = await readBody(event)
+	const body = await readBody(event)
 	// const passwords = await fetchPasswords()
 
 	console.log(query)
 
 	return {
 		api: 'works',
-		rec: query,
+		in: query,
+		out: body,
 	}
 })
 
