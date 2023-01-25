@@ -18,16 +18,23 @@ const data = ref({})
 // https://nuxt.com/docs/getting-started/data-fetching#data-fetching
 async function login() {
   // await useFetch(`/api/login`, { method: 'GET', body: { verify: inputPassword.value } })
-  const { data: back } = await useFetch(`api/login?verify=${inputPassword.value}`, {
-    method: 'post',
-    body: { test: 123 }
-  })
+  // const { data: back } = await useFetch(`api/login?verify=${inputPassword.value}`, {
+  //   method: 'post',
+  //   body: { test: 123 }
+  // })
 
   // const { data: back } = await useFetch('api/login')
   // const { data: back } = await useFetch('api/login?param1=test')
   // const { data: back } = await useFetch(`api/login?verify=${inputPassword.value}`)
 
-  data.value = back
+  // data.value = back
+
+  data.value = await useFetch(`api/login?verify=${inputPassword.value}`)
+
+  // data.value = await useFetch(`api/login?verify=${inputPassword.value}`, {
+  //   method: 'post',
+  //   body: { test: 123 }
+  // })
   isLoggedIn.value = true
   // console.log(verified);
   // isLoggedIn.value = verified.value.authenticated
