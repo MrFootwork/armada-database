@@ -1,5 +1,3 @@
-import type { IncomingMessage, ServerResponse } from 'http'
-
 // import {
 // 	createApp,
 // 	createRouter,
@@ -8,22 +6,19 @@ import type { IncomingMessage, ServerResponse } from 'http'
 // 	sendError,
 // 	createError,
 // } from 'h3'
-
 import { MongoClient } from 'mongodb'
 import { config } from 'dotenv'
 
 export default defineEventHandler(async event => {
-	console.log('server is hit')
-	const query = getQuery(event)
+	// console.log('auth is hit')
 	// const body = await readBody(event)
-	// const passwords = await fetchPasswords()
-
-	console.log(query)
-
-	return {
-		api: 'works',
-		rec: query,
-	}
+	// // const passwords = await fetchPasswords()
+	// // console.log(passwords)
+	// // console.log(event.node.req)
+	// console.log(body)
+	// return {
+	// 	authenticated: false,
+	// }
 })
 
 async function fetchPasswords() {
