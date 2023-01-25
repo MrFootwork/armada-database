@@ -1,14 +1,3 @@
-import type { IncomingMessage, ServerResponse } from 'http'
-
-// import {
-// 	createApp,
-// 	createRouter,
-// 	useBody,
-// 	useBase,
-// 	sendError,
-// 	createError,
-// } from 'h3'
-
 import { MongoClient } from 'mongodb'
 import { config } from 'dotenv'
 
@@ -18,7 +7,7 @@ export default defineEventHandler(async event => {
 	// const body = await readBody(event)
 	// const passwords = await fetchPasswords()
 
-	console.log(query)
+	console.table(query)
 
 	return {
 		api: 'works',

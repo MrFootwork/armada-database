@@ -11,8 +11,6 @@
 const inputPassword = ref('')
 const isLoggedIn = ref(false)
 const data = ref({})
-// const { data: verified } = await useFetch(`/api/login?verify=${inputPassword.value}`)
-
 
 // FIXME read about data fetching in Nuxt
 // https://nuxt.com/docs/getting-started/data-fetching#data-fetching
