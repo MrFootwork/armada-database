@@ -1,13 +1,4 @@
-// import {
-// 	createApp,
-// 	createRouter,
-// 	useBody,
-// 	useBase,
-// 	sendError,
-// 	createError,
-// } from 'h3'
 import { MongoClient } from 'mongodb'
-import { config } from 'dotenv'
 
 export default defineEventHandler(async event => {
 	// console.log('auth is hit')
@@ -22,8 +13,8 @@ export default defineEventHandler(async event => {
 })
 
 async function fetchPasswords() {
-	const uri = process.env.MONGODB_URI || ''
-	const mongoClient: MongoClient = new MongoClient(uri)
+	const { mongoURI } = useRuntimeConfig()
+	const mongoClient: MongoClient = new MongoClient(mongoURI)
 
 	try {
 		await mongoClient.connect()

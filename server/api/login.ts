@@ -1,13 +1,12 @@
 import { MongoClient } from 'mongodb'
-import { config } from 'dotenv'
 
 export default defineEventHandler(async event => {
 	console.log('server is hit')
 	const query = getQuery(event)
 	// const body = await readBody(event)
-	// const passwords = await fetchPasswords()
+	const passwords = await fetchPasswords()
 
-	console.table(query)
+	// console.table(passwords)
 
 	return {
 		api: 'works',
@@ -17,8 +16,8 @@ export default defineEventHandler(async event => {
 })
 
 async function fetchPasswords() {
-	const uri = process.env.MONGODB_URI || ''
-	const mongoClient: MongoClient = new MongoClient(uri)
+	const { mongoURI } = useRuntimeConfig()
+	const mongoClient: MongoClient = new MongoClient(mongoURI)
 
 	try {
 		await mongoClient.connect()
