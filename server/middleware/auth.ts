@@ -2,15 +2,11 @@ import { MongoClient } from 'mongodb'
 
 // this will be called every time, before anything else
 export default defineEventHandler(async event => {
-	// console.log('auth is hit')
-	// const body = await readBody(event)
+	console.log('auth is hit')
+	// console.log(event.node.res.statusCode)
 	// const passwords = await fetchPasswords()
-	// // console.log(passwords)
-	// // console.log(event.node.req)
-	// console.log(body)
-	// return {
-	// 	authenticated: false,
-	// }
+	// console.log(passwords)
+	event.context.auth = { user: 123 }
 })
 
 async function fetchPasswords() {

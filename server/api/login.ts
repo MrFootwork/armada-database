@@ -6,7 +6,7 @@ export default defineEventHandler(async event => {
 	// const body = await readBody(event)
 	const passwords = await fetchPasswords()
 
-	console.table(passwords)
+	console.log('event.context.auth', event.context.auth)
 
 	return {
 		api: 'works',
