@@ -1,9 +1,10 @@
 import { MongoClient } from 'mongodb'
 
+// this will be called every time, before anything else
 export default defineEventHandler(async event => {
 	// console.log('auth is hit')
 	// const body = await readBody(event)
-	// // const passwords = await fetchPasswords()
+	// const passwords = await fetchPasswords()
 	// // console.log(passwords)
 	// // console.log(event.node.req)
 	// console.log(body)

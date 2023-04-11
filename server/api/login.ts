@@ -6,11 +6,12 @@ export default defineEventHandler(async event => {
 	// const body = await readBody(event)
 	const passwords = await fetchPasswords()
 
-	// console.table(passwords)
+	console.table(passwords)
 
 	return {
 		api: 'works',
 		in: query,
+		passwords: passwords,
 		// out: body,
 	}
 })
